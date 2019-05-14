@@ -5,16 +5,34 @@
         <title></title>
     </head>
     <body>
+        <div align="center">
+
         <h1 align="center" accesskey="">Actualizar Producto</h1>
+        <button align="center" type="button" name="but">
+            <a align="center" href="index.html">Volver</a>
+        </button>
         <form align="center" class="" action="index.html" method="post">
             <label for="product">Producto</label><br>
             <input type="text" name="product" readonly="true"><br>
             <label for="price">Precio</label><br>
-            <input type="text" name="price"><br>
-            <label for="active">
+            <input type="text" name="price" onblur="validateNum(this.value)"><br>
+            <label for="active"> Activar
                 <input type="checkbox" name="active">
             </label><br>
             <button type="button" name="button">Actualizar</button>
+                <button type="reset" name="button">Cancelar</button>
         </form>
+                </div>
+                <script type="text/javascript">
+
+                            function validateNum(n){
+                                var RE = /^\d*\.?\d*$/;
+                    if (RE.test(n)) {
+                        document.getElementById('con').innerHTML ="Precio valido";
+                    } else {
+                        document.getElementById('con').innerHTML ="Precio inválido";
+                    }
+                            }
+                </script>
     </body>
 </html>

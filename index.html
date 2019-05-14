@@ -6,15 +6,43 @@
     </head>
     <body>
         <h1 align="center"> Productos</h1>
+        <div align="center">
+
+        <button align="center" type="button" name="but">
+            <a align="center" href="update.html">Actualizar</a>
+        </button><br><br>
         <form align="center" class="form" action="index.html" method="#">
             <label for="product">Producto</label><br>
-            <input type="text" name="product" placeholder="Ex. Jabón"><br>
+            <input type="text" id="p" name="product" placeholder="Ex. Jabón" required="true" onblur="validate(this.value)"><br>
+            <p id="aler"></p>
             <label for="price">Precio</label><br>
-            <input type="text" name="price" placeholder="Ex. 5, 5.78"><br>
+            <input type="text" name="price" placeholder="Ex. 5, 5.78" required="true" onblur="validateNum(this.value)">
+            <p id="con"></p>
             <label for="check">Esta activo
                 <input type="checkbox" name="check">
             </label><br>
             <button type="button" name="button">Enviar</button>
+            <button type="reset" name="button">Cancelar</button>
         </form>
+                </div>
+        <script type="text/javascript">
+            function validate(p){
+                var cant = p.length;
+                if (cant<=99 & cant>=3 & cant!='') {
+                    document.getElementById('aler').innerHTML ="Producto valido";
+                }else {
+                    document.getElementById('aler').innerHTML ="Producto inválido";
+                }
+            }
+
+            function validateNum(n){
+                var RE = /^\d*\.?\d*$/;
+    if (RE.test(n)) {
+        document.getElementById('con').innerHTML ="Precio valido";
+    } else {
+        document.getElementById('con').innerHTML ="Precio inválido";
+    }
+            }
+        </script>
     </body>
 </html>
