@@ -43,7 +43,7 @@ $conn = null;
 <body>
     <div class="container" id="co">
         <div class="notification">
-            <h1 class="is-size-1" align="center">Actualizar Producto</h1>
+            <h1 class="is-size-1" align="center">Actualizar <?php echo $product ?></h1>
             <div class="buttons is-1">
                 <button class="button is-info" type="button" name="but">
                     <a href="index.php">Volver</a>
