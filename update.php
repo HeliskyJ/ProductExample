@@ -32,6 +32,7 @@ $conn = null;
 <head>
     <meta charset="utf-8">
     <title></title>
+    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet"
      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
@@ -41,14 +42,26 @@ $conn = null;
 </head>
 
 <body>
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="subtitle">
+            ACTUALIZAR
+          </h1>
+          <h2 class="title">
+             <?php echo $product ?>
+          </h2>
+        </div>
+      </div>
+  </section>
+  <div class="notification has-background-grey-dark">
+      <div class="buttons is-1">
+          <button class="button is-info" type="button" name="but" id="buto"
+          onclick="location.href ='index.php'"> Productos
+          </button>
+      </div>
     <div class="container" id="co">
-        <div class="notification">
-            <h1 class="is-size-1" align="center">Actualizar <?php echo $product ?></h1>
-            <div class="buttons is-1">
-                <button class="button is-info" type="button" name="but">
-                    <a href="index.php">Volver</a>
-                </button>
-            </div>
+        <div class="notification" id="uno">
             <div class="columns is-mobile">
                 <div class="column column is-half is-offset-one-quarter">
                     <form class="form" action="cchn.php">
@@ -56,22 +69,22 @@ $conn = null;
                         <?php echo 'value=' . $id; ?>>
                         <label for="product">Producto</label>
                         <br>
-                        <input class="input is-hovered" disabled type="text"
+                        <input class="input is-hovered is-uppercase" disabled type="text"
                         name="product" <?php echo 'value=' . $product; ?>>
-                        <br>
+                        <br><br>
                         <label for="price">Precio</label>
                         <br>
                         <input class="input is-hovered" type="text" name="price"
                         <?php echo 'value=' . $precio; ?>
                         onblur="validateNum(this.value)">
                         <br>
-                        <p class="has-text-danger" id="con"></p>
+                        <p class="has-text-danger" id="con"></p><br>
                         <label for="active"> Activar
                             <input type="checkbox" name="active"
                             <?php if ($stat !=0 ) {
                                 echo "checked='checked'";}?>>
                         </label>
-                        <br>
+                        <br><br>
                         <div class="buttons">
                             <input class="button is-success" type="submit"
                              name="button">
@@ -102,5 +115,20 @@ function validateNum(n) {
 </script>
             </div>
         </div>
+        <footer class='footer has-background-grey-dark'>
+          <div class='content has-text-centered has-text-grey-light'>
+            <p>
+              <strong>Hecho</strong> por
+              <a href="https://jgthms.com">Hely Méndez</a>.
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+               The website content
+              is licensed
+               <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/'">
+                   CC BY NC SA 4.0</a>.
+            </p>
+          </div>
+        </footer>
+    </div>
     </body>
 </html>

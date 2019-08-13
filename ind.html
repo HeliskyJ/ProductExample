@@ -13,17 +13,27 @@
 </head>
 
 <body>
-    <div class="container" id="co">
-        <div class="notification">
-
-            <h1 class="is-size-1" align="center"> Productos</h1>
-
-            <div>
-                <button class="button is-info" type="button" name="but" id="but">
-                    <a href="index.php">Productos</a>
-                </button>
-            </div>
-
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            CREAR PRODUCTOS
+          </h1>
+          <h2 class="subtitle">
+            Megalot
+          </h2>
+        </div>
+      </div>
+  </section>
+  <div class="notification has-background-grey-dark">
+      <div>
+          <button class="button is-link" type="button" name="but" id="buto"
+           onclick="location.href ='index.php'">
+              Listado de Productos
+          </button>
+      </div>
+    <div class="container" id="co" >
+          <div class="notification" id="uno">
             <br>
             <div class="columns is-mobile">
                 <div class="column column is-half is-offset-one-quarter">
@@ -35,30 +45,43 @@
                         name="product" placeholder="Ex. Jabón"
                         onblur="validate(this.value)">
                         <br>
-                        <p class="has-text-danger" id="aler"></p>
+                        <p class="has-text-danger" id="aler"></p><br>
                         <label for="price">Precio</label>
                         <br>
                         <input class="input is-hovered" type="text"
                         name="price" placeholder="Ex. 5, 5.78"
                         onblur="validateNum(this.value)">
-                        <p class="has-text-danger" id="con"></p>
+                        <p class="has-text-danger" id="con"></p><br><br>
                         <label class="checkbox" for="check">Esta activo
                             <input type="checkbox" name="che">
                         </label>
-                        <br>
-
-                        <div class="buttons">
+                        <br><br><br>
+                        <div class="field is-grouped is-pulled-right">
                             <input class="button is-success" type="submit"
-                            value="Enviar">
+                            value="Crear">
                             <button class="button is-danger" type="reset"
                             name="button">Cancelar</button>
                         </div>
-
                     </form>
                 </div>
             </div>
         </div>
     </div>
+    <footer class='footer has-background-grey-dark'>
+      <div class='content has-text-centered has-text-grey-light'>
+        <p>
+          <strong>Hecho</strong> por
+          <a href="https://jgthms.com">Hely Méndez</a>.
+           Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+           The website content
+          is licensed
+           <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/'">
+               CC BY NC SA 4.0</a>.
+        </p>
+      </div>
+    </footer>
+</div>
     <script type = "text/javascript" >
     function validate(p) {
     var cant = p.length;

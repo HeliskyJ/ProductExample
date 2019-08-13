@@ -12,13 +12,24 @@
 </head>
 
 <body>
+    <section class="hero is-primary is-bold">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            PRODUCTOS
+          </h1>
+          <h2 class="subtitle">
+            Megalot
+          </h2>
+        </div>
+      </div>
+  </section>
+  <div class="notification has-background-grey-dark">
     <div class="container" id="co">
-        <div class="notification">
-            <h1 class="is-size-1" align="center"> Productos</h1>
-
-            <div class="buttons is-1">
-                <a href="ind.html" class="button is-info"
-                type="button">Nuevo Producto</a>
+            <div class="buttons is-3">
+                <button class="button is-link" name="button" onclick="location.href ='ind.html'">
+                    Crear Producto
+                </button>
             </div>
 
     <?php
@@ -34,12 +45,16 @@
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sql = "select * from product";
 
-        echo "<div class='column column is-half is-offset-one-quarter'>
-                      <table class='table is-fullwidth'>
+        echo "<div class='column column is-half is-offset-one-quarter has-background-grey'>
+                      <table class='table is-fullwidth has-text-grey-darker'>
                       <tr>
-                      <th colspan='1'>Producto</th>
-                      <th colspan='1'>Precio</th>
-                      <th colspan='1'>Activo</th> </th>";
+                      <th colspan='2'>Producto</th>
+                      <th colspan='2'>Precio</th>
+                      <th colspan='3'>Estado</th>
+                      <th colspan='1'></th>
+
+
+                       </tr>";
         if ($conn) {
             $result = $conn->query($sql);
             foreach ($result as $value) {
@@ -52,8 +67,8 @@
 
                 echo
                  "<tr>
-                  <td>" . $value["product_name"] . "</td>" .
-                 "<td>" . "<span>Q.</span>" . $value["pricce"] . "</td>" .
+                  <td>" . $value["product_name"] . "</td><td></td>" .
+                 "<td>" . "<span>Q.</span>" . $value["pricce"] . "</td><td></td>" .
                  "<td>" . "<input type='checkbox' disabled value='" . $act . "'";
                 if ($act != 0) {
                     echo "checked='" . $a . "'";
@@ -61,7 +76,7 @@
                 ">";
 
                 echo
-                "</td>" .
+                "</td> <td></td> <td></td>" .
                 "<td>" . "<a class='button is-primary is-2'
                  href='update.php?id=" . $value["id"] . "'>Actualizar</a>" .
                  "</td>" .
@@ -69,7 +84,23 @@
                  href='delete.php?id=" . $value["id"] . "'>Eliminar</a>" .
                  "</td>";
             }
-            echo "</tr>" . "</div>";
+            echo "</tr>" . " </table> </div> </div>" ;
+
+            echo "<footer class='footer has-background-grey-dark'>
+              <div class='content has-text-centered has-text-grey-light'>
+                <p>
+                  <strong>Hecho</strong> por
+                   <a href='https://jgthms.com'>Hely Méndez</a>.
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  <a href='http://opensource.org/licenses/mit-license.php'>MIT</a>.
+                   The website content
+                  is licensed
+                   <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/''>
+                   CC BY NC SA 4.0</a>.
+                </p>
+              </div>
+            </footer>";
+
         } else {
             echo "nothig";
 
